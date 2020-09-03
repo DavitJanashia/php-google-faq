@@ -30,31 +30,52 @@
     $arrayAllText = explode(" /.M./",$allText);
     // var_dump($arrayAllText);
 
-    $arrayOUT = [];
 
-    for ($i=0; $i < count($arrayAllText); $i++) {
-      $arrayIN = [];
-      while(count($arrayIN) != 2){
-        $arrayIN['question'] = $arrayAllText[$i++];
-        $arrayIN['answer'] = $arrayAllText[$i];
-      }
+    // ************** VERSIONE 1 **************
 
-      $arrayOUT[] = $arrayIN;
+    // $arrayOUT = [];
+    //
+    // for ($i=0; $i < count($arrayAllText); $i++) {
+    //   $arrayIN = [];
+    //   while(count($arrayIN) != 2){
+    //     $arrayIN['question'] = $arrayAllText[$i++];
+    //     $arrayIN['answer'] = $arrayAllText[$i];
+    //   }
+    //
+    //   $arrayOUT[] = $arrayIN;
+    // }
+    // // var_dump($arrayOUT);
+    //
+    // foreach ($arrayOUT as $key2 => $value2) {
+    //   foreach ($value2 as $key3 => $txts) {
+    //     if($key3  === 'question'){
+    //       echo '<h2>' . $txts . '</h2>';
+    //     } elseif($key3  === 'answer'){
+    //       echo '<p>' . $txts . '</p>';
+    //     }
+    //   }
+    // }
+
+    // ************** VERSIONE 2 **************
+
+    // for ($i=0; $i < count($arrayAllText); $i++) {
+    //   if($i%2 === 0){
+    //     echo '<h2>' . $arrayAllText[$i] . '</h2>';
+    //   } else {
+    //     echo '<p>' . $arrayAllText[$i] . '</p>';
+    //   }
+    // }
+
+    // ************** VERSIONE 3 **************
+
+
+    for ($i=0; $i <count($arrayAllText) ; $i++) {
+      $faqs[$arrayAllText[$i++]] =  $arrayAllText[$i];
     }
-    // var_dump($arrayOUT);
+    // var_dump($faqs);
 
-    foreach ($arrayOUT as $key2 => $value2) {
-      foreach ($value2 as $key3 => $txts) {
-        if($key3  === 'question'){
-          echo '<h2>';
-          echo $txts;
-          echo '</h2>';
-        } elseif($key3  === 'answer'){
-          echo '<p>';
-          echo $txts;
-          echo '</p>';
-        }
-      }
+    foreach ($faqs as $question=>$answer) {
+     echo '<h2>' . $question . '</h2>';
+     echo '<p>' . $answer . '</p>';
     }
-
 ?>
