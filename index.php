@@ -31,20 +31,6 @@
     // var_dump($arrayAllText);
 
     $arrayOUT = [];
-    // $k=0;
-    // foreach ($arrayAllText as $key1 => $value1) {
-    //
-    //   $arrayIN = [];
-    //   for ($i=0; $i < 2; $i++) {
-    //     if($i===0){
-    //       $arrayIN['question'] = $value1;
-    //     } elseif($i===1){
-    //       $arrayIN['answer'] = $value1;
-    //     }
-    //   }
-    //   $arrayOUT[] = $arrayIN;
-    //   $k++;
-    // }
 
     for ($i=0; $i < count($arrayAllText); $i++) {
       $arrayIN = [];
